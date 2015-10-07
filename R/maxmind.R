@@ -36,8 +36,8 @@
 #'results <- maxmind("196.200.60.51", file, "country_code")
 #'@export
 maxmind <- function(ips, file, fields = c("continent_name", "country_name", "country_code")){
-  possible_fields <- c("continent_name", "country_name", "country_code", "region_name", "postal_code",
-                       "city_name", "timezone", "connection", "latitude", "longitude")
+  possible_fields <- c("continent_name", "country_name", "country_code", "region_name",
+                       "city_name", "postal_code", "timezone", "connection", "latitude", "longitude")
   
   if(!all(fields %in% possible_fields)){
     warning("Some field names you have provided are not supported and no data will be retrieved for them. \nThe
