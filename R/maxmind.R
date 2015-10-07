@@ -14,6 +14,7 @@
 #'  \item{country_code}{: the ISO code of the country. Requires a country or city database}
 #'  \item{region_name}{: the English-language name of the region. Requires a city database.}
 #'  \item{city_name}{: the English-language name of the city. Requires a city database}
+#'  \item{postal_code}{: the English-language name of the city. Requires a city database}
 #'  \item{timezone}{: the tzdata-compatible time zone. Requires a city database}
 #'  \item{longitude}{: latitude of location. Requires a city database}
 #'  \item{latitude}{: longitude of location. Requires a city database}
@@ -35,7 +36,7 @@
 #'results <- maxmind("196.200.60.51", file, "country_code")
 #'@export
 maxmind <- function(ips, file, fields = c("continent_name", "country_name", "country_code")){
-  possible_fields <- c("continent_name", "country_name", "country_code", "region_name",
+  possible_fields <- c("continent_name", "country_name", "country_code", "region_name", "postal_code",
                        "city_name", "timezone", "connection", "latitude", "longitude")
   
   if(!all(fields %in% possible_fields)){
