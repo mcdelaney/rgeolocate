@@ -133,7 +133,7 @@ List maxmind_bindings::lookup(std::vector < std::string >& ip_addresses, MMDB_s 
     } else if(fields[i] == "city_name"){
       output.push_back(city_name(mmdb_set, ip_addresses));
     } else if(fields[i] == "postal_code"){
-      output.push_back(city_name(mmdb_set, ip_addresses));
+      output.push_back(postal_code(mmdb_set, ip_addresses));
     } else if(fields[i] == "timezone"){
       output.push_back(timezone(mmdb_set, ip_addresses));
     } else if(fields[i] == "latitude"){
