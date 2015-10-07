@@ -95,6 +95,10 @@ std::vector < std::string > maxmind_bindings::city_name(MMDB_s *data, std::vecto
   return mmdb_getstring(data, ip_addresses,"city", "names", "en", NULL);
 }
 
+std::vector < std::string > maxmind_bindings::postal_code(MMDB_s *data, std::vector < std::string >& ip_addresses){
+  return mmdb_getstring(data, ip_addresses,"postal", "code", "en", NULL);
+}
+
 std::vector < std::string > maxmind_bindings::timezone(MMDB_s *data, std::vector < std::string >& ip_addresses){
   return mmdb_getstring(data, ip_addresses, "location", "time_zone", NULL);
 }
@@ -127,6 +131,8 @@ List maxmind_bindings::lookup(std::vector < std::string >& ip_addresses, MMDB_s 
     } else if(fields[i] == "region_name"){
       output.push_back(region_name(mmdb_set, ip_addresses));
     } else if(fields[i] == "city_name"){
+      output.push_back(city_name(mmdb_set, ip_addresses));
+    } else if(fields[i] == "postal_code"){
       output.push_back(city_name(mmdb_set, ip_addresses));
     } else if(fields[i] == "timezone"){
       output.push_back(timezone(mmdb_set, ip_addresses));
