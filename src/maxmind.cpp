@@ -96,7 +96,7 @@ std::vector < std::string > maxmind_bindings::city_name(MMDB_s *data, std::vecto
 }
 
 std::vector < std::string > maxmind_bindings::postal_code(MMDB_s *data, std::vector < std::string >& ip_addresses){
-  return mmdb_getstring(data, ip_addresses,"postal", "code", "en", NULL);
+  return mmdb_getstring(data, ip_addresses,"postal", "code", NULL);
 }
 
 std::vector < std::string > maxmind_bindings::timezone(MMDB_s *data, std::vector < std::string >& ip_addresses){
